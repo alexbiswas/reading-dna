@@ -54,7 +54,7 @@ def _add_usage(total: dict, usage: dict) -> None:
 
 
 async def build_shelves(reader: ReaderData, dna: ReadingDNA, llm: LLM, catalog: cat.Catalog,
-                        n: int = 5) -> dict:
+                        n: int = 5, on_step=None) -> dict:
     usage: dict = {}
     result: dict = {"shelves": {}, "rejected": {}, "metrics": {}, "trace": {}}
 
@@ -69,7 +69,7 @@ async def build_shelves(reader: ReaderData, dna: ReadingDNA, llm: LLM, catalog: 
 
         picked: set[str] = set()
         for kind in ("similar", "steelman"):
-            run = await build_shelf(kind, dna, reader, llm, client, n=n, exclude=picked)
+            run = await build_shelf(kind, dna, reader, llm, client, n=n, exclude=picked, on_step=on_step)
             _add_usage(usage, run.usage)
             result["trace"][kind] = run.trace
             if run.shelf is None:

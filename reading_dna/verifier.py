@@ -61,7 +61,8 @@ async def verify_shelf(shelf: Shelf, reader: ReaderData, verify_fn: VerifyFn, ki
         found = await verify_fn(rec.title, rec.author)
         checks["exists"] = bool(found.get("exists"))
 
-        item = rec.model_dump() | {"on_to_read": key in to_read, "year": found.get("year")}
+        item = rec.model_dump() | {"on_to_read": key in to_read, "year": found.get("year"),
+                                   "cover_url": found.get("cover_url")}
         failed = [name for name, ok in checks.items() if not ok]
         if failed:
             out.rejected.append(item | {"failed": failed})

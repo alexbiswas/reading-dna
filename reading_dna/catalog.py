@@ -53,7 +53,7 @@ class OpenLibraryCatalog:
     def search(self, query: str, limit: int = 5) -> list[dict]:
         r = self._http.get(f"{self.BASE}/search.json", timeout=self.timeout, params={
             "q": query, "limit": limit,
-            "fields": "key,title,author_name,first_publish_year,subject,number_of_pages_median",
+            "fields": "key,title,author_name,first_publish_year,subject,number_of_pages_median,cover_i",
         })
         r.raise_for_status()
         return [{
@@ -63,6 +63,8 @@ class OpenLibraryCatalog:
             "year": d.get("first_publish_year"),
             "subjects": d.get("subject", [])[:8],
             "pages": d.get("number_of_pages_median"),
+            "cover_url": (f"https://covers.openlibrary.org/b/id/{d['cover_i']}-M.jpg"
+                          if d.get("cover_i") else None),
         } for d in r.json().get("docs", [])]
 
     def details(self, work_id: str) -> dict | None:

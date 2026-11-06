@@ -13,6 +13,7 @@ import asyncio
 import json
 import time
 from dataclasses import dataclass, field
+from typing import Callable
 
 from mcp import Client
 from pydantic import ValidationError
@@ -59,8 +60,12 @@ def tool_json(result):
         return {"error": _tool_result_text(result)}
 
 
+StepFn = Callable[[dict], None]
+
+
 async def run_agent(llm: LLM, client: Client, system: str, user_message: str,
-                    max_turns: int = 12) -> AgentResult:
+                    max_turns: int = 10, on_step: StepFn | None = None) -> AgentResult:
+    """on_step is called with each tool call as it happens, so a UI can show live progress."""
     tools = mcp_tools_to_llm_tools(await client.list_tools()) + [SUBMIT_SHELF_TOOL]
     messages: list[dict] = [{"role": "user", "content": user_message}]
     out = AgentResult(shelf=None)
@@ -100,9 +105,12 @@ async def run_agent(llm: LLM, client: Client, system: str, user_message: str,
 
             result = await client.call_tool(call["name"], call["input"])
             text = _tool_result_text(result)
-            out.trace.append({"turn": turn, "type": "tool", "tool": call["name"],
-                              "input": call["input"], "output": text[:300],
-                              "ms": round((time.perf_counter() - t0) * 1000)})
+            step = {"turn": turn, "type": "tool", "tool": call["name"],
+                    "input": call["input"], "output": text[:300],
+                    "ms": round((time.perf_counter() - t0) * 1000)}
+            out.trace.append(step)
+            if on_step:
+                on_step(step)
             results.append({"type": "tool_result", "tool_use_id": call["id"],
                             "content": text, "is_error": bool(result.is_error)})
         messages.append({"role": "user", "content": results})
@@ -128,6 +136,9 @@ def shelf_brief(kind: str, dna: ReadingDNA, reader: ReaderData, n: int, exclude:
 
 
 async def build_shelf(kind: str, dna: ReadingDNA, reader: ReaderData, llm: LLM, client: Client,
-                      n: int = 5, exclude: set[str] | None = None) -> AgentResult:
+                      n: int = 5, exclude: set[str] | None = None,
+                      on_step: StepFn | None = None) -> AgentResult:
     system = SIMILAR_SYSTEM if kind == "similar" else STEELMAN_SYSTEM
-    return await run_agent(llm, client, system, shelf_brief(kind, dna, reader, n, exclude or set()))
+    report = (lambda step: on_step(step | {"shelf": kind})) if on_step else None
+    return await run_agent(llm, client, system, shelf_brief(kind, dna, reader, n, exclude or set()),
+                           on_step=report)
