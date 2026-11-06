@@ -31,7 +31,10 @@ This guide walks through the project in the order the code runs. For each piece 
 ## 2. Stage by stage
 
 ### 2.1 Ingestion (`ingest.py`)
-Three parsers, one for each onboarding path:
+Four ways in (`ingest.py` + `goodreads.py`):
+- **Goodreads profile link** (`goodreads.py`): pulls the profile's public shelf RSS feeds (read, currently-reading, to-read). If the profile is private, Goodreads returns no feed, and the app says so plainly and points to the CSV export. It's only fetched when a user pastes their own link, and it's cached for an hour. Goodreads can change or block these feeds at any time, which is why the CSV export stays as the fallback. That's a platform-risk trade-off worth discussing in an interview.
+
+The file parsers:
 - **Goodreads CSV:** cleans Goodreads' odd `="0441013597"` ISBN format and normalises dates.
 - **Kindle `My Clippings.txt`:** splits on `==========`, skips bookmarks, and removes duplicates (Kindle saves a highlight again every time you edit it).
 - **Typed list:** "Dune by Frank Herbert". This is the cold-start path, because most users don't have an export.
@@ -118,9 +121,11 @@ The prompt *asks* the agent to behave. The verifier *enforces* it. Each pick mus
 
 Rejections aren't thrown away. They become **eval metrics on every single run** (section 3).
 
-### 2.7 The app (`app.py`) and analytics (`analytics.py`)
+### 2.7 The app (`app.py`, `ui.py`) and analytics (`analytics.py`)
+**Design:** cool reading-room paper with navy ink. Literata (a serif designed for e-readers) for books and prose, and Atkinson Hyperlegible for the interface. Deep teal always means "Similar" and oxblood always means "Steelman"; the theme palette deliberately avoids both. The one bold element is the **spine strip**: the reader's library drawn as book spines, coloured by theme, so the Reading DNA is something you can *see*. All visual pieces are plain HTML/CSS functions in `ui.py`, so they can be previewed and tested without Streamlit. While the agents work, `on_step` callbacks stream each search and check into a live status panel.
+
 Product decisions you can point to:
-- Three onboarding paths, with the typed list as the cold-start route.
+- Four onboarding paths: profile link (least effort), CSV, Kindle, and the typed list as the cold-start route. Private profiles get a reason and a next step, not a dead end.
 - **The DNA is shown and editable before any recommendations.** Untick a wrong theme and the shelves ignore it. This builds trust and lets users correct mistakes.
 - Every pick shows its reason and "because you read…".
 - Cost controls: a per-session run limit, a 2 MB upload cap, and the API key kept on the server only. For a real public launch, also set a monthly spending limit in the Anthropic console, since session limits are easy to get around.
@@ -142,7 +147,7 @@ Think of evals as four layers, from cheap and constant to expensive and occasion
          ├──────────────────────────┤
          │  Every run: verifier      │  hallucination / repeats / grounding (evals: verifier)
          ├──────────────────────────┤
-         │  Unit tests (no LLM)      │  17 tests, under 1 second          (pytest)
+         │  Unit tests (no LLM)      │  27 tests, under 1 second          (pytest)
          └──────────────────────────┘
 ```
 
@@ -193,7 +198,7 @@ Think of evals as four layers, from cheap and constant to expensive and occasion
 
 ```bash
 pip install -r requirements.txt
-python -m pytest -q                                              # 17 tests, offline
+python -m pytest -q                                              # 27 tests, offline
 
 # Offline demo: no key, no network
 python -m reading_dna.pipeline --goodreads data/sample_goodreads.csv --kindle data/sample_clippings.txt --mock

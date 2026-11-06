@@ -20,7 +20,9 @@ streamlit run app.py                      # web app
 ## Layout
 ```
 reading_dna/
-  ingest.py       Goodreads / Kindle / typed-list parsers
+  ingest.py       Goodreads CSV / Kindle / typed-list parsers
+  goodreads.py    import from a Goodreads profile link (public shelves only)
+  ui.py           design tokens, CSS and HTML components (spine strip, book cards)
   catalog.py      Open Library client + offline fake
   mcp_server.py   MCP tools: search_books, get_book_details, verify_book
   dna.py          Reading DNA (structured output)
@@ -32,6 +34,6 @@ reading_dna/
   analytics.py    funnel events
 app.py            Streamlit web app
 evals/            verifier, hold-out, LLM judge, blind human test
-tests/            17 offline tests
+tests/            27 offline tests
 data/             sample data (see data/README.md)
 ```
