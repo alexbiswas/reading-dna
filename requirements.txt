@@ -1,0 +1,6 @@
+anthropic>=0.40
+mcp>=2.3,<3
+pydantic>=2.7
+requests>=2.31
+streamlit>=1.38
+pytest>=8
