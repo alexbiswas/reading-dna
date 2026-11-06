@@ -1,0 +1,350 @@
+[
+ {
+  "work_id": "OLFAKE1W",
+  "title": "The Godfather",
+  "author": "Mario Puzo",
+  "year": 1969,
+  "subjects": [
+   "crime",
+   "mafia",
+   "family",
+   "power"
+  ],
+  "description": "Offline sample entry for The Godfather."
+ },
+ {
+  "work_id": "OLFAKE2W",
+  "title": "Do Androids Dream of Electric Sheep?",
+  "author": "Philip K. Dick",
+  "year": 1968,
+  "subjects": [
+   "science fiction",
+   "androids",
+   "empathy",
+   "identity"
+  ],
+  "description": "Offline sample entry for Do Androids Dream of Electric Sheep?."
+ },
+ {
+  "work_id": "OLFAKE3W",
+  "title": "The Day of the Jackal",
+  "author": "Frederick Forsyth",
+  "year": 1971,
+  "subjects": [
+   "thriller",
+   "assassination",
+   "procedural"
+  ],
+  "description": "Offline sample entry for The Day of the Jackal."
+ },
+ {
+  "work_id": "OLFAKE4W",
+  "title": "Predictably Irrational",
+  "author": "Dan Ariely",
+  "year": 2008,
+  "subjects": [
+   "behavioral economics",
+   "decision making",
+   "psychology"
+  ],
+  "description": "Offline sample entry for Predictably Irrational."
+ },
+ {
+  "work_id": "OLFAKE5W",
+  "title": "The Stranger",
+  "author": "Albert Camus",
+  "year": 1942,
+  "subjects": [
+   "absurdism",
+   "existentialism",
+   "alienation"
+  ],
+  "description": "Offline sample entry for The Stranger."
+ },
+ {
+  "work_id": "OLFAKE6W",
+  "title": "The Road",
+  "author": "Cormac McCarthy",
+  "year": 2006,
+  "subjects": [
+   "post-apocalyptic",
+   "fathers and sons",
+   "survival"
+  ],
+  "description": "Offline sample entry for The Road."
+ },
+ {
+  "work_id": "OLFAKE7W",
+  "title": "Dune",
+  "author": "Frank Herbert",
+  "year": 1965,
+  "subjects": [
+   "science fiction",
+   "politics",
+   "power",
+   "ecology"
+  ],
+  "description": "Offline sample entry for Dune."
+ },
+ {
+  "work_id": "OLFAKE8W",
+  "title": "Watchmen",
+  "author": "Alan Moore",
+  "year": 1987,
+  "subjects": [
+   "graphic novels",
+   "superheroes",
+   "power",
+   "cold war"
+  ],
+  "description": "Offline sample entry for Watchmen."
+ },
+ {
+  "work_id": "OLFAKE9W",
+  "title": "The Sixth Extinction",
+  "author": "Elizabeth Kolbert",
+  "year": 2014,
+  "subjects": [
+   "extinction",
+   "ecology",
+   "climate",
+   "natural history"
+  ],
+  "description": "Offline sample entry for The Sixth Extinction."
+ },
+ {
+  "work_id": "OLFAKE10W",
+  "title": "Zero to One",
+  "author": "Peter Thiel",
+  "year": 2014,
+  "subjects": [
+   "startups",
+   "entrepreneurship",
+   "monopoly",
+   "technology"
+  ],
+  "description": "Offline sample entry for Zero to One."
+ },
+ {
+  "work_id": "OLFAKE11W",
+  "title": "Hooked",
+  "author": "Nir Eyal",
+  "year": 2014,
+  "subjects": [
+   "product design",
+   "habits",
+   "consumer behavior"
+  ],
+  "description": "Offline sample entry for Hooked."
+ },
+ {
+  "work_id": "OLFAKE12W",
+  "title": "All Systems Red",
+  "author": "Martha Wells",
+  "year": 2017,
+  "subjects": [
+   "science fiction",
+   "artificial intelligence",
+   "androids"
+  ],
+  "description": "Offline sample entry for All Systems Red."
+ },
+ {
+  "work_id": "OLFAKE13W",
+  "title": "Letters to Milena",
+  "author": "Franz Kafka",
+  "year": 1952,
+  "subjects": [
+   "letters",
+   "love",
+   "literature"
+  ],
+  "description": "Offline sample entry for Letters to Milena."
+ },
+ {
+  "work_id": "OLFAKE14W",
+  "title": "Drive Your Plow Over the Bones of the Dead",
+  "author": "Olga Tokarczuk",
+  "year": 2009,
+  "subjects": [
+   "mystery",
+   "animals",
+   "literary fiction"
+  ],
+  "description": "Offline sample entry for Drive Your Plow Over the Bones of the Dead."
+ },
+ {
+  "work_id": "OLFAKE15W",
+  "title": "Exhalation",
+  "author": "Ted Chiang",
+  "year": 2019,
+  "subjects": [
+   "science fiction",
+   "short stories",
+   "free will",
+   "artificial intelligence"
+  ],
+  "description": "Offline sample entry for Exhalation."
+ },
+ {
+  "work_id": "OLFAKE16W",
+  "title": "Klara and the Sun",
+  "author": "Kazuo Ishiguro",
+  "year": 2021,
+  "subjects": [
+   "artificial intelligence",
+   "androids",
+   "literary fiction",
+   "love"
+  ],
+  "description": "Offline sample entry for Klara and the Sun."
+ },
+ {
+  "work_id": "OLFAKE17W",
+  "title": "Never Let Me Go",
+  "author": "Kazuo Ishiguro",
+  "year": 2005,
+  "subjects": [
+   "literary fiction",
+   "cloning",
+   "identity",
+   "dystopia"
+  ],
+  "description": "Offline sample entry for Never Let Me Go."
+ },
+ {
+  "work_id": "OLFAKE18W",
+  "title": "The Spy Who Came in from the Cold",
+  "author": "John le Carré",
+  "year": 1963,
+  "subjects": [
+   "espionage",
+   "cold war",
+   "thriller"
+  ],
+  "description": "Offline sample entry for The Spy Who Came in from the Cold."
+ },
+ {
+  "work_id": "OLFAKE19W",
+  "title": "Neuromancer",
+  "author": "William Gibson",
+  "year": 1984,
+  "subjects": [
+   "cyberpunk",
+   "artificial intelligence",
+   "science fiction"
+  ],
+  "description": "Offline sample entry for Neuromancer."
+ },
+ {
+  "work_id": "OLFAKE20W",
+  "title": "The Myth of Capitalism",
+  "author": "Jonathan Tepper",
+  "year": 2018,
+  "subjects": [
+   "monopoly",
+   "antitrust",
+   "economics",
+   "competition"
+  ],
+  "description": "Offline sample entry for The Myth of Capitalism."
+ },
+ {
+  "work_id": "OLFAKE21W",
+  "title": "Irresistible",
+  "author": "Adam Alter",
+  "year": 2017,
+  "subjects": [
+   "behavioral addiction",
+   "technology",
+   "psychology"
+  ],
+  "description": "Offline sample entry for Irresistible."
+ },
+ {
+  "work_id": "OLFAKE22W",
+  "title": "Risk Savvy",
+  "author": "Gerd Gigerenzer",
+  "year": 2014,
+  "subjects": [
+   "decision making",
+   "risk",
+   "heuristics",
+   "psychology"
+  ],
+  "description": "Offline sample entry for Risk Savvy."
+ },
+ {
+  "work_id": "OLFAKE23W",
+  "title": "Nudge",
+  "author": "Richard H. Thaler",
+  "year": 2008,
+  "subjects": [
+   "behavioral economics",
+   "decision making",
+   "public policy"
+  ],
+  "description": "Offline sample entry for Nudge."
+ },
+ {
+  "work_id": "OLFAKE24W",
+  "title": "Indistractable",
+  "author": "Nir Eyal",
+  "year": 2019,
+  "subjects": [
+   "attention",
+   "habits",
+   "productivity"
+  ],
+  "description": "Offline sample entry for Indistractable."
+ },
+ {
+  "work_id": "OLFAKE25W",
+  "title": "The 4-Hour Workweek",
+  "author": "Timothy Ferriss",
+  "year": 2007,
+  "subjects": [
+   "productivity",
+   "lifestyle",
+   "entrepreneurship"
+  ],
+  "description": "Offline sample entry for The 4-Hour Workweek."
+ },
+ {
+  "work_id": "OLFAKE26W",
+  "title": "The Wealth of Nations",
+  "author": "Adam Smith",
+  "year": 1776,
+  "subjects": [
+   "economics",
+   "markets",
+   "classics"
+  ],
+  "description": "Offline sample entry for The Wealth of Nations."
+ },
+ {
+  "work_id": "OLFAKE27W",
+  "title": "Silent Spring",
+  "author": "Rachel Carson",
+  "year": 1962,
+  "subjects": [
+   "environment",
+   "pesticides",
+   "ecology"
+  ],
+  "description": "Offline sample entry for Silent Spring."
+ },
+ {
+  "work_id": "OLFAKE28W",
+  "title": "The Rational Optimist",
+  "author": "Matt Ridley",
+  "year": 2010,
+  "subjects": [
+   "progress",
+   "economics",
+   "optimism",
+   "environment"
+  ],
+  "description": "Offline sample entry for The Rational Optimist."
+ }
+]

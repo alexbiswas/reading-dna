@@ -1,0 +1,7 @@
+__pycache__/
+.pytest_cache/
+results.json
+events.jsonl
+evals/results/
+.streamlit/secrets.toml
+.env
