@@ -1,0 +1,19 @@
+{
+  "_about": "Hand-labelled pairs used to check the LLM judge itself. If the judge disagrees with these labels, fix the judge prompt before trusting its scores. Add your own pairs as you read.",
+  "pairs": [
+    {"a": "Zero to One", "a_author": "Peter Thiel", "b": "The Myth of Capitalism", "b_author": "Jonathan Tepper",
+     "label": true, "why": "Argues concentration harms competition: a direct, good-faith counter to pro-monopoly thesis."},
+    {"a": "Hooked", "a_author": "Nir Eyal", "b": "Irresistible", "b_author": "Adam Alter",
+     "label": true, "why": "Argues habit-forming tech becomes behavioural addiction."},
+    {"a": "Predictably Irrational", "a_author": "Dan Ariely", "b": "Risk Savvy", "b_author": "Gerd Gigerenzer",
+     "label": true, "why": "Argues heuristics are often rational adaptations, not biases."},
+    {"a": "The Rational Optimist", "a_author": "Matt Ridley", "b": "The Sixth Extinction", "b_author": "Elizabeth Kolbert",
+     "label": true, "why": "Credible, evidence-heavy case that human progress carries a catastrophic ecological cost."},
+    {"a": "Predictably Irrational", "a_author": "Dan Ariely", "b": "Nudge", "b_author": "Richard H. Thaler",
+     "label": false, "why": "Agrees with the thesis. Same school, not a counterargument."},
+    {"a": "Hooked", "a_author": "Nir Eyal", "b": "Indistractable", "b_author": "Nir Eyal",
+     "label": false, "why": "Same author's follow-up. Not an independent opposing case."},
+    {"a": "Zero to One", "a_author": "Peter Thiel", "b": "The 4-Hour Workweek", "b_author": "Timothy Ferriss",
+     "label": false, "why": "Different topic, not an argument against the thesis."}
+  ]
+}
